@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div class="container mt-5 animated fadeInLeft">
+<h1 class="text-center">Estadisticas</h1>
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <div>
+              <div style="display: block">
+                <canvas baseChart height="300" width="600"
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [plugins]="barChartPlugins"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType">
+                </canvas>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+</div>

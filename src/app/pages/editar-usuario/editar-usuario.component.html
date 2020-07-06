@@ -1,0 +1,78 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+    <h1 class="text-center">Editar un nuevo usuario</h1>
+<div class="row mt-4">
+<div class="col-sm-12">
+<form action=""  autocomplete="on" >
+<div class="form-group">
+<label for=""><i class="fas fa-address-card"></i> Nombre:</label>
+<input type="text" class="form-control" [(ngModel)]='usuario.nombre'  name="nombre"  [class.is-invalid]='getNombreNovalid'>
+</div>
+<div class="form-group">
+<label for=""><i class="fas fa-address-card"></i> Apeliido:</label>
+<input type="text" class="form-control" [(ngModel)]='usuario.apellido' name="apellido">
+</div>
+<div class="form-group">
+<label for=""><i class="fas fa-envelope"></i> Correo:</label>
+<input type="email" class="form-control" [(ngModel)]='usuario.correo' name="correo">
+</div>
+<div class="form-group">
+<label for=""><i class="fas fa-mobile"></i> Celular:</label>
+<input type="number" class="form-control" [(ngModel)]='usuario.celular' name="celular">
+</div>
+<div class="form-row">
+<div class="col-md-6">
+<div class="form-group">
+<label for=""><i class="fas fa-image"></i> Imagen(Opcional):</label>
+<input type="url" class="form-control" [(ngModel)]='usuario.imgUrl' name="imgUrl">
+</div>
+</div>
+<div class="col-md-6">
+<div class="form-group">
+<label for=""><i class="fas fa-calendar-day"></i> Fecha de nacimiento:</label>
+<input type="date" class="form-control" [(ngModel)]='usuario.fechanacimiento' name="fechanacimiento">
+</div>
+</div>
+</div>
+<div class="form-row">
+<div class="col-md-6 mb-3">
+<div class="form-group">
+<label for=""><i class="fas fa-flag"></i> Pais:</label>
+<select class="custom-select custom-select-lg mb-3"  [(ngModel)]='usuario.pais' name="pais">
+<option selected>{{usuario.pais}}</option>
+<option *ngFor="let paise of paises" [value]="paise.name">{{paise.name}}</option>
+</select>
+</div>
+</div>
+<div class="col-md-6 mb-3">
+<div class="form-group">
+<label for=""><i class="fas fa-city"></i> Ciudad:</label>
+<select class="custom-select custom-select-lg mb-3"  [(ngModel)]='usuario.ciudad' name="ciudad">
+<option selected>{{usuario.ciudad}}</option>
+<option *ngFor="let capital of paises" [value]="capital.capital">{{capital.capital}}</option>
+</select>
+</div>
+</div>
+</div>
+<div class="form-row ">
+<div class="col-md-6 mb-3">
+<div class="form-group">
+<button class="btn btn-outline-success form-control" type="button" (click)="editarUsuario(usuario.id)" >Editar
+<i class="fas fa-user-edit"></i>
+</button>
+</div>
+</div>
+<div class="col-md-6 mb-3">
+<div class="form-group">
+<button class="btn btn-outline-warning  form-control" type="reset" >Limpiar
+<i class="fas fa-trash-alt"></i>
+</button>
+</div>
+</div>
+</div>
+
+
+</form>
+</div>
+</div>
+</div>

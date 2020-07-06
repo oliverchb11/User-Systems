@@ -1,0 +1,112 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+<h1 class="text-center">Agrega un nuevo usuario</h1>
+<div class="row mt-4">
+    <div class="col-sm-12">
+        <form action="" (ngSubmit)='agregarUsuario(validacionForm)' [formGroup]="validacionForm" autocomplete="on" >
+            <div class="form-group">
+                <label for=""><i class="fas fa-address-card"></i> Nombre:</label>
+                <input type="text" class="form-control" formControlName="nombre" id="nombre" [class.is-invalid]='getNombreNovalid' >
+            </div>
+            <div class="alert alert-danger" *ngIf="getNombreNovalid" role="alert">
+                El campo Nombre es requerido
+            </div>
+            <div class="alert alert-danger" *ngIf="getNombreNovalid" role="alert">
+                El campo Nombre es minimo de 5 letras
+            </div>
+            <div class="form-group">
+                <label for=""><i class="fas fa-address-card"></i> Apeliido:</label>
+                <input type="text" class="form-control" formControlName="apellido" id="apellido" [class.is-invalid]='getApellidoNovalid'>
+            </div>
+            <div class="alert alert-danger" *ngIf="getApellidoNovalid" role="alert">
+                El campo Apellido es requerido
+            </div>
+            <div class="alert alert-danger" *ngIf="getApellidoNovalid" role="alert">
+                El campo Apellido es minimo de 5 letras
+            </div>
+            <div class="form-group">
+                <label for=""><i class="fas fa-envelope"></i> Correo:</label>
+                <input type="email" class="form-control" formControlName="correo" id="correo" [class.is-invalid]='getCorreoNovalid'>
+            </div>
+            <div class="alert alert-danger" *ngIf="getCorreoNovalid" role="alert">
+                El campo Correo es requerido
+            </div>
+            <div class="alert alert-danger" *ngIf="getCorreoNovalid" role="alert">
+                El campo Correo no es valido
+            </div>
+            <div class="form-group">
+                <label for=""><i class="fas fa-mobile"></i> Celular:</label>
+                <input type="text" class="form-control" formControlName="celular" id="celular" [class.is-invalid]='getCelularNovalid'>
+            </div>
+            <div class="alert alert-danger" *ngIf="getCelularNovalid" role="alert">
+                El campo Celular es requerido
+            </div>
+            <div class="alert alert-danger" *ngIf="getCelularNovalid" role="alert">
+                El campo Celular debe de ser de 10 digitos
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                <div class="form-group">
+                    <label for=""><i class="fas fa-image"></i> Imagen(Opcional):</label>
+                    <input type="url" class="form-control" formControlName='imgUrl'  id="imgUrl" >
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="form-group">
+                    <label for=""><i class="fas fa-calendar-day"></i> Fecha de nacimiento:</label>
+                    <input type="date" class="form-control" formControlName='fechanacimiento'  id="fechanacimiento" [class.is-invalid]='getFechaNovalid'>
+                </div>
+                <div class="alert alert-danger" *ngIf="getFechaNovalid" role="alert">
+                    El campo Fecha nacimiento es requerido
+                </div>
+            </div>
+            </div>
+
+            <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <div class="form-group">
+                    <label for=""><i class="fas fa-flag"></i> Pais:</label>
+                    <select class="custom-select custom-select-lg mb-3"  formControlName="pais" id="pais" [class.is-invalid]='getPaisNovalid'>
+                        <option selected>Selecciona un pais</option>
+                        <option *ngFor="let paise of paises" [value]="paise.name">{{paise.name}}</option>
+                      </select>
+                </div>
+                <div class="alert alert-danger" *ngIf="getPaisNovalid" role="alert">
+                    El campo Pais es requerido
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="form-group">
+                    <label for=""><i class="fas fa-city"></i> Ciudad:</label>
+                    <select class="custom-select custom-select-lg mb-3" formControlName="ciudad" id="ciudad" [class.is-invalid]='getCiudadNovalid'>
+                        <option selected>Selecciona una ciudad</option>
+                        <option *ngFor="let capital of paises" [value]="capital.capital">{{capital.capital}}</option>
+                      </select>
+                </div>
+                <div class="alert alert-danger" *ngIf="getCiudadNovalid" role="alert">
+                    El campo Pais es requerido
+                </div>
+            </div>
+        </div> 
+            <div class="form-row ">
+                <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                         <button class="btn btn-primary form-control" type="submit" [disabled]='!validacionForm.valid'>Guardar
+                            <i class="fas fa-save"></i>
+                         </button>
+                    </div>
+                 </div>
+                <div class="col-md-6 mb-3">
+                     <div class="form-group">
+                        <button class="btn btn-warning  form-control" type="reset" [disabled]='!validacionForm.dirty'>Limpiar
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                     </div>
+                 </div>
+             </div>
+
+        </form>
+    </div>
+</div>
+</div>
+
