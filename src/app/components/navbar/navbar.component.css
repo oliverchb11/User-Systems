@@ -1,0 +1,10 @@
+#nombrelogeo{
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: -10px;
+}   
+
+#logout:hover{
+    font-size: 20px;
+    color: red;
+}

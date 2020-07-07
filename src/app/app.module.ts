@@ -30,7 +30,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //pipe para filtrado y validacion de imagenes
 import { NoImgPipe } from './pipes/no-img.pipe';
 //modulo para las graficas de mi aplicacion
-import { ChartsModule } from 'ng2-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { BuscadorPipe } from './pipes/buscador.pipe';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { ChartsModule } from 'ng2-charts';
     AdministradorComponent,
     LoginComponent,
     RegisterComponent,
-    ListadousuariosComponent
+    ListadousuariosComponent,
+    BuscadorPipe
   ],
   imports:[
     BrowserModule,
@@ -56,7 +59,8 @@ import { ChartsModule } from 'ng2-charts';
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
-    ChartsModule,
+    BrowserAnimationsModule,
+    NgxChartsModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
