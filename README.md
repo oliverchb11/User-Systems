@@ -2,22 +2,23 @@
 
 # AngularCloudFirestore
 realizado:
-usamos firebase database
-usamos login autenticacion correo/contraseña
-usamos registro con autenticacion correo/contraseña
-usamos formularios reactivos y template
-usamos APIS de paises
-usamos guard para validar el logeo de rutas
-usamos PIPES para las imagenes
-CRUD de datos de usuarios
-usamos alertas con sweetalert2
-usamos iconos con fontawesome6
-usamos @Input
-usamos Modelos y Clases para el tipado de datos
-usuamos servicios pára la logica
-usamos estilos bonitos
-falta:
-buscador de usuarios,estadisticas,imagenes
+usamos firebase database.
+usamos login autenticacion correo/contraseña.
+usamos registro con autenticacion correo/contraseña.
+usamos formularios reactivos y template.
+usamos APIS de paises.
+usamos guard para validar el logeo de rutas.
+usamos PIPES para las imagenes.
+CRUD de datos de usuarios.
+usamos alartas con sweetalert2.
+usamos iconos con fontawesome.
+usamos @Input.
+usamos Modelos y Clases para el tipado de datos.
+usuamos servicios pára la logica.
+usamos estilos bonitos.
+usamos ngx-charts para graficos dinamigos.
+usamos buscador de usuarios.
+falta:imagenes.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
