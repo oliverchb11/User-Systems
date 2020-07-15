@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
 
   cerrarSession(){
     this.authServices.logout();
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/');
     location.reload();
   }
   login(){

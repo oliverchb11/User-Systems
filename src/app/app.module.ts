@@ -14,6 +14,7 @@ import { EstadisticasComponent } from './pages/estadisticas/estadisticas.compone
 import { BuscarusuariosComponent } from './pages/buscarusuarios/buscarusuarios.component';
 import { AdministradorComponent } from './pages/administrador/administrador.component';
 import { ListadousuariosComponent } from './pages/listadousuarios/listadousuarios.component';
+import { P404Component } from './pages/p404/p404.component';
 //paginas de mi aplicacion de el login/registrer
 import { LoginComponent } from './sign/login/login.component';
 import { RegisterComponent } from './sign/register/register.component';
@@ -27,12 +28,12 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import {RouterModule} from '@angular/router';
 //modulos para los formularios reactivos
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-//pipe para filtrado y validacion de imagenes
+//pipe para filtrado y validacion de imagenes y buscador
 import { NoImgPipe } from './pipes/no-img.pipe';
+import { BuscadorPipe } from './pipes/buscador.pipe';
 //modulo para las graficas de mi aplicacion
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { BuscadorPipe } from './pipes/buscador.pipe';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { BuscadorPipe } from './pipes/buscador.pipe';
     LoginComponent,
     RegisterComponent,
     ListadousuariosComponent,
-    BuscadorPipe
+    BuscadorPipe,
+    P404Component
   ],
   imports:[
     BrowserModule,

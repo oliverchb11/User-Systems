@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AgregarUsuarioComponent } from './pages/agregar-usuario/agregar-usuario.component';
@@ -10,12 +10,13 @@ import { LoginComponent } from './sign/login/login.component';
 import { RegisterComponent } from './sign/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ListadousuariosComponent } from './pages/listadousuarios/listadousuarios.component';
+import { P404Component } from './pages/p404/p404.component';
 
 
 
 const routes: Routes = [
   
-  {path:'home', component:HomeComponent},
+  {path:'', component:HomeComponent},
   {path:'agregar-usuario', component:AgregarUsuarioComponent,canActivate:[AuthGuard]},
   {path:'lista-usuarios', component:ListadousuariosComponent,canActivate:[AuthGuard]},
   {path:'editar-usuario/:id', component:EditarUsuarioComponent , canActivate:[AuthGuard]},
@@ -25,7 +26,7 @@ const routes: Routes = [
   //login y register
   {path:'login', component:LoginComponent},
   {path:'registro', component:RegisterComponent},
-  {path:'**', pathMatch:'full' , redirectTo:'home'},
+  {path:'**', component:P404Component}
 ];
 
 @NgModule({
