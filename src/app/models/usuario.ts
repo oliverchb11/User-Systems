@@ -9,3 +9,4 @@ export interface Usuario {
     ciudad:string;
     fechanacimiento:Date;
 }
+

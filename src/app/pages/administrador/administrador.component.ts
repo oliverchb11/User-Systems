@@ -10,15 +10,29 @@ import { Adminlogin } from '../../models/adminlogin';
 export class AdministradorComponent implements OnInit {
     email:string;
     nombre:string;
+
+  
+
+    
   constructor(private autService:AuthService) { }
 
   ngOnInit(): void {
-    this.getDatosLocalstorage();
+    this.getDatosLocalstorage(); 
+      
+      
   }
 
   getDatosLocalstorage(){
   this.nombre =  localStorage.getItem('nombre')
   this.email =  localStorage.getItem('email')
+   
+    
+    
+    
+    
   }
+
+
+
 
 }

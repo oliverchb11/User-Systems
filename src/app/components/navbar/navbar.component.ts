@@ -10,16 +10,31 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  validadorS:boolean;
   constructor(private authServices:AuthService , protected router:Router) { }
 
   ngOnInit(): void {
+    this.validadorSession();
 
   }
 
   cerrarSession(){
     this.authServices.logout();
+    this.router.navigateByUrl('/home');
+    location.reload();
+  }
+  login(){
     this.router.navigateByUrl('/login');
-
+  }
+  validadorSession(){
+   if( localStorage.getItem('idToken')){
+      this.validadorS = true;
+      console.log(this.validadorS);
+   }
+   else{
+     this.validadorS = false
+     console.log(this.validadorS);
+     
+   }
   }
 }

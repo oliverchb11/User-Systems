@@ -1,16 +1,16 @@
 <div class="row" *ngIf="usuarios.length>0">
-    <div class="col-sm-4 mt-3" *ngFor="let usuario of usuarios ">
-        <div class="card bg-dark" style="width: 18rem;" >
+    <div class="col-12 col-lg-4 col-md-6 d-flex justify-content-center mt-3" *ngFor="let usuario of usuarios ">
+        <div class="card bg-dark" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title text-center text-white">{{usuario.nombre}} {{usuario.apellido}}</h5>
+                <h5 class="card-title text-center text-white">{{usuario.nombre}} {{usuario.apellido}}</h5>
             </div>
             <img src="{{usuario | noImg}}" class="card-img-top" alt="...">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><label for=""><i class="fas fa-envelope"></i> Correo:</label> {{usuario.correo}}</li>
-              <li class="list-group-item"><label for=""><i class="fas fa-mobile"></i> Celular:</label> {{usuario.celular}}</li>
-              <li class="list-group-item"><label for=""><i class="fas fa-calendar-day"></i> Fecha de nacimiento:</label> {{usuario.fechanacimiento}}</li>
-              <li class="list-group-item"><label for=""><i class="fas fa-flag"></i> Pais:</label> {{usuario.pais}}</li>
-              <li class="list-group-item"><label for=""><i class="fas fa-city"></i> Ciudad:</label>  {{usuario.ciudad}}</li>
+                <li class="list-group-item"><label for=""><i class="fas fa-envelope"></i> Correo:</label> {{usuario.correo}}</li>
+                <li class="list-group-item"><label for=""><i class="fas fa-mobile"></i> Celular:</label> {{usuario.celular}}</li>
+                <li class="list-group-item"><label for=""><i class="fas fa-calendar-day"></i> Fecha de nacimiento:</label> {{usuario.fechanacimiento}}</li>
+                <li class="list-group-item"><label for=""><i class="fas fa-flag"></i> Pais:</label> {{usuario.pais}}</li>
+                <li class="list-group-item"><label for=""><i class="fas fa-city"></i> Ciudad:</label> {{usuario.ciudad}}</li>
             </ul>
             <div class="card-body">
                 <div class="form-row">
@@ -20,26 +20,25 @@
                                 <i class="fas fa-user-edit"></i>
                             </button>
                         </div>
-                  </div>
-                  <div class="col-md-6 ">
-                         <div class="form-group">
+                    </div>
+                    <div class="col-md-6 ">
+                        <div class="form-group">
                             <button class="btn btn-danger form-control" title="Eliminar Usuario" (click)="eliminarUsuario(usuario.id)">
                                 <i class="fas fa-user-times"></i>
                             </button>
                         </div>
-                  </div>
-            </div>  
+                    </div>
+                </div>
             </div>
-          </div>
+        </div>
     </div>
 </div>
 
-<div *ngIf="usuarios.length===0 && cargando"  >
-    <div class="row" >
+<div *ngIf="usuarios.length===0 && cargando">
+    <div class="row">
         <div class="col-sm-12">
             <h1 class="text-center">No hay usuarios</h1>
             <img id="nouser" class="" src="https://i.blogs.es/0258ca/fb32/450_1000.jpg" alt="nouser">
         </div>
     </div>
-</div >
-
+</div>

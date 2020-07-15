@@ -8,10 +8,10 @@ import {map} from 'rxjs/operators';
 })
 export class UsuariosService {
   info = {};
+
   constructor(private firestore: AngularFirestore, protected http: HttpClient) { }
-  //TODO: buscador en proceso
-  getUsuarioBuscar$(nombre:string,id:string){
-    return this.firestore.collection<Usuario>('usuarios');
+  getImagenes(){
+
   }
   // traer todos los usuarios de firestore cloud
   getUsuarios$(){
@@ -42,12 +42,14 @@ export class UsuariosService {
   getDatosParaGrafica(){
     return this.firestore.collection<Usuario>('usuarios').valueChanges().pipe(map((res:Usuario[])=>{
      return  res.map(({pais,fechanacimiento})=>{
+                    
        let fecha = new Date(fechanacimiento);
        let date = fecha.getFullYear();
         return this.info = {
           name:pais,
           value:date
         }
+      
         
      })
 

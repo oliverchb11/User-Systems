@@ -14,8 +14,8 @@ import { ListadousuariosComponent } from './pages/listadousuarios/listadousuario
 
 
 const routes: Routes = [
-
-  {path:'home', component:HomeComponent,canActivate:[AuthGuard]},
+  
+  {path:'home', component:HomeComponent},
   {path:'agregar-usuario', component:AgregarUsuarioComponent,canActivate:[AuthGuard]},
   {path:'lista-usuarios', component:ListadousuariosComponent,canActivate:[AuthGuard]},
   {path:'editar-usuario/:id', component:EditarUsuarioComponent , canActivate:[AuthGuard]},
